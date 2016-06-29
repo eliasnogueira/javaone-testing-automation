@@ -30,10 +30,10 @@ public class PesquisaPessoaScrollTeste {
                 = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"), capacidade);
 
         // efetua um scroll ate encontrar. quando encontra clica. se nao encontra da erro
-        driver.scrollToExact("Claudio").click();
+        driver.scrollToExact("Claudiomir").click();
 
         // pega o valor do atributo texto do campo e compara se trouxe o nome do usuario
-        assertEquals("Claudio", driver.findElement(By.id("com.eliasnogueira.workshop:id/txt_nome")).getAttribute("text"));
+        assertEquals("Claudiomir", driver.findElement(By.id("com.eliasnogueira.workshop:id/txt_nome")).getAttribute("text"));
 
         driver.quit();
     }

@@ -81,8 +81,4 @@ public class Person {
         this.hobbies = hobbies;
     }
     
-    @Override
-    public String toString() {
-        return "[ id = " + getId() + ", nome = " + getNome() + ",  endereco = " + getEndereco() + ", hobbies = " + getHobbies() + "]";
-    }
 }

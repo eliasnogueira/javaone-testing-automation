@@ -41,12 +41,12 @@ public class AlterarPessoaTeste {
         // pesquisa a pessoa para alterar
         wait.until(ExpectedConditions.presenceOfElementLocated(By.id("android:id/search_button")));
         driver.findElement(By.id("android:id/search_button")).click();
-        driver.findElement(By.id("android:id/search_src_text")).sendKeys("Claudio");
+        driver.findElement(By.id("android:id/search_src_text")).sendKeys("Nome Teste");
 
         // pega o texto do resultado da pesquisa e compara se e a mesma pessoa
         MobileElement item = driver.findElement(By.id("android:id/text1"));
         String texto = item.getText();
-        assertEquals("Claudio", texto);
+        assertEquals("Nome Teste", texto);
 
         // clica para alterar
         item.click();

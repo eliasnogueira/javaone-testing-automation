@@ -38,13 +38,14 @@ public class SparkMockAPI {
             persons.add(person);
 
             res.type("application/json");
-            return person;
+            return gson.toJson(person);
         });
 
         put("/api/person/:id", (req, res) -> {
             System.out.println("Body: " + req.body());
+            
             res.type("application/json");
-            return updatePerson(req);
+            return gson.toJson(updatePerson(req));
         });
 
         delete("/api/person/:id", (req, res) -> {
@@ -108,7 +109,7 @@ public class SparkMockAPI {
         int id = Integer.parseInt(req.params("id"));
         Person personRequested = gson.fromJson(req.body(), Person.class);
         
-        System.out.println(req.body());
+        System.out.println("Body update person" + req.body());
         
         // get the data from personRequested keeping the id
         Person personFound = findPersonById(id);

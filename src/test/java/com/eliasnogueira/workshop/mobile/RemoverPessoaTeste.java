@@ -39,7 +39,7 @@ public class RemoverPessoaTeste {
         // pesquisa a pessoa para alterar
         wait.until(ExpectedConditions.presenceOfElementLocated(By.id("android:id/search_button")));
         driver.findElement(By.id("android:id/search_button")).click();
-        driver.findElement(By.id("android:id/search_src_text")).sendKeys("Claudio");
+        driver.findElement(By.id("android:id/search_src_text")).sendKeys("Claudiomir");
         
         // guarda o elemento em um mobileelement
         MobileElement item = driver.findElement(By.id("android:id/text1"));

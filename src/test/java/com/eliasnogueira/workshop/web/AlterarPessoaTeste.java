@@ -17,7 +17,7 @@ public class AlterarPessoaTeste {
         WebDriver driver = new FirefoxDriver();
         WebDriverWait wait = new WebDriverWait(driver, 10);
 
-        driver.get("http://eliasnogueira.com/tdc/workshop");
+        driver.get("http://eliasnogueira.com/tdc/automacao_rwm/workshop");
 
         // pesquisa a pessoa que sera alterada
         wait.until(ExpectedConditions.presenceOfElementLocated(By.id("pesquisar")));

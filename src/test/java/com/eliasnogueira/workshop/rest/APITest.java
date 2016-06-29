@@ -54,8 +54,8 @@ public class APITest {
         when()
             .post("/person").
         then().
-            body("nome", equalTo("Yara Senger")).
-            body("endereco", equalTo("SP")).
+            body("nome", equalTo("Yara Senger")).and().
+            body("endereco", equalTo("SP")).and().
             body("hobbies", equalTo("TDC"));    
                 
     }
@@ -71,13 +71,13 @@ public class APITest {
     @Test
     public void alterPerson() {
         given().
-            contentType(ContentType.JSON).
-            body(" { \"nome\" : \"Elias da Silva Nogueira\" } ");
+            contentType(ContentType.JSON)
+            .body(new Person("Bruno Souza", "SP", "Comer")).
         when().
-            put("/person/{id}", 1).
+            put("/person/{id}", 2).
         then().
-            body("nome", equalTo("Elias da SIlva Nogueira")).
-            body("endereco", equalTo("RS")).
-            body("hobbies", equalTo("Automate Tests")); 
+            body("nome", equalTo("Bruno Souza")).and().
+            body("endereco", equalTo("SP")).and().
+            body("hobbies", equalTo("Comer")); 
     }
 }
