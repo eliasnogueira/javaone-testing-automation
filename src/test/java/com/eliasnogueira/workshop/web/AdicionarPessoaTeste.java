@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -13,8 +14,9 @@ public class AdicionarPessoaTeste {
 
     @Test
     public void testeAdicionarPessoa() {
-
-        WebDriver driver = new FirefoxDriver();
+        System.setProperty("webdriver.chrome.driver", "/Users/eliasnogueira/Selenium/chromedriver");
+        
+        WebDriver driver = new ChromeDriver();
         WebDriverWait wait = new WebDriverWait(driver, 10);
         driver.get("http://eliasnogueira.com/tdc/automacao_rwm/workshop");
 
@@ -27,11 +29,11 @@ public class AdicionarPessoaTeste {
         driver.findElement(By.cssSelector("input[ng-model='post.hobbies']")).sendKeys("AUTOMATIZAR");
         driver.findElement(By.cssSelector(".w3-btn.w3-teal")).click();
 
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.id("nome")));
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.id("endereco")));
         String dadosPagina = driver.getPageSource();
         assertTrue(dadosPagina.contains("TESTE CADASTRO"));
         assertTrue(dadosPagina.contains("SAO PAULO"));
-        assertTrue(dadosPagina.contains("PROGRAMAR"));
+        assertTrue(dadosPagina.contains("AUTOMATIZAR"));
 
         driver.quit();
     }

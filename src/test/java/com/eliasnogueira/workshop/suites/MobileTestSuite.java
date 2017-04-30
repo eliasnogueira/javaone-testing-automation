@@ -1,11 +1,11 @@
 package com.eliasnogueira.workshop.suites;
 
-import com.eliasnogueira.workshop.mobile.PesquisaPessoaScrollTeste;
-import com.eliasnogueira.workshop.mobile.RemoverPessoaTeste;
-import com.eliasnogueira.workshop.mobile.AdicionarPessoaTeste;
-import com.eliasnogueira.workshop.mobile.AlterarPessoaTeste;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
+
+import com.eliasnogueira.workshop.mobile.AdicionarPessoaTeste;
+import com.eliasnogueira.workshop.mobile.AlterarPessoaTeste;
+import com.eliasnogueira.workshop.mobile.RemoverPessoaTeste;
 
 /**
  * Test suite for mobile package
@@ -16,7 +16,6 @@ import org.junit.runners.Suite;
         {
             AdicionarPessoaTeste.class,
             AlterarPessoaTeste.class, 
-            PesquisaPessoaScrollTeste.class, 
             RemoverPessoaTeste.class
             
         }
